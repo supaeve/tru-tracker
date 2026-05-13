@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRUUW — The 11+ Grammar Schools Tracker (2027 Entry)</title>
+  <meta name="description" content="An interactive admissions tracker for 80 UK grammar schools. One file, instant download, yours forever." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Geist:wght@300..600&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- ─────────────  TOP NAV  ───────────── -->
+  <header class="wrap nav">
+    <div class="brand">
+      <span class="brand-logo-text">TRUUW</span>
+      <span class="brand-tag">11+ Tracker · 2027 Entry</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#faq">FAQ</a>
+      <a href="#" class="nav-buy" data-buy>Buy — £14</a>
+    </nav>
+  </header>
+
+  <!-- ─────────────  HERO  ───────────── -->
+  <section class="wrap hero" style="border-top: none; padding-top: 56px;">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Updated for September 2026 testing · 2027 entry</p>
+      <h1>Eighty grammar schools.<br/>One file. <em>Every deadline that matters.</em></h1>
+      <p class="hero-lede">
+        A single, beautifully made HTML document you download once and keep forever — a working tracker for the 11+ admissions year. Search, filter, mark each school's status, and export deadlines straight to your calendar.
+      </p>
+      <div class="cta-row">
+        <button class="btn-primary" data-buy>
+          <span>Buy &amp; download</span>
+          <span class="price">£14</span>
+          <span class="arrow">→</span>
+        </button>
+        <a class="btn-ghost" href="#preview">See what's inside ↓</a>
+      </div>
+      <div class="hero-fineprint">
+        <span><span class="tick">✓</span> Instant download</span>
+        <span><span class="tick">✓</span> Works offline forever</span>
+        <span><span class="tick">✓</span> Free updates this admissions cycle</span>
+      </div>
+    </div>
+
+    <div class="hero-preview">
+      <div class="preview-card" id="preview">
+        <div class="pv-head">
+          <span class="pv-brand">TRUUW</span>
+          <span class="pv-edition">2027 Entry</span>
+        </div>
+        <h2 class="pv-h2">Eighty grammars,<br/><em>tracked at a glance.</em></h2>
+        <p class="pv-sub">REGISTER · TEST · RESULTS · OFFER</p>
+        <div class="pv-pills">
+          <span class="pv-pill"><b>80</b>schools</span>
+          <span class="pv-pill"><b>15</b>regions</span>
+          <span class="pv-pill"><b>4</b>views</span>
+        </div>
+        <table class="pv-table">
+          <thead>
+            <tr><th>School</th><th>Reg closes</th><th>Test</th><th>Type</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="pv-name">The Judd School</div><div class="pv-town">Tonbridge · Kent</div></td>
+              <td class="pv-mono pv-soon">30 Jun</td>
+              <td class="pv-mono">12 Sep</td>
+              <td><span class="pv-tag pv-tag-b">Boys</span></td>
+              <td><span class="pv-status"><span class="pv-dot" style="background: var(--terracotta);"></span>Registered</span></td>
+            </tr>
+            <tr>
+              <td><div class="pv-name">Tonbridge Grammar</div><div class="pv-town">Tonbridge · Kent</div></td>
+              <td class="pv-mono pv-soon">30 Jun</td>
+              <td class="pv-mono">12 Sep</td>
+              <td><span class="pv-tag pv-tag-g">Girls</span></td>
+              <td><span class="pv-status"><span class="pv-dot" style="background: var(--tan);"></span>Shortlisted</span></td>
+            </tr>
+            <tr>
+              <td><div class="pv-name">Wilson's School</div><div class="pv-town">Wallington · Sutton</div></td>
+              <td class="pv-mono">4 Jul</td>
+              <td class="pv-mono">20 Sep</td>
+              <td><span class="pv-tag pv-tag-b">Boys</span></td>
+              <td><span class="pv-status"><span class="pv-dot" style="background: var(--ink-30);"></span>Not started</span></td>
+            </tr>
+            <tr>
+              <td><div class="pv-name">Cranbrook School</div><div class="pv-town">Cranbrook · Kent</div></td>
+              <td class="pv-mono">15 Jul</td>
+              <td class="pv-mono">12 Sep</td>
+              <td><span class="pv-tag pv-tag-c">Co-ed</span></td>
+              <td><span class="pv-status"><span class="pv-dot" style="background: var(--forest);"></span>Offered</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pv-anno pv-anno-1">Click any row to see test specs &amp; open days.</div>
+      <div class="pv-anno pv-anno-2">Set status. Stays saved on your device.</div>
+    </div>
+  </section>
+
+  <!-- ─────────────  STATS STRIP  ───────────── -->
+  <section class="wrap stats">
+    <div class="stats-grid">
+      <div class="stat"><span class="stat-num">80</span><span class="stat-label">Schools tracked</span></div>
+      <div class="stat"><span class="stat-num">15</span><span class="stat-label">Regions &amp; consortia</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Views — table, cards, timeline, print</span></div>
+      <div class="stat"><span class="stat-num">£14</span><span class="stat-label">One-off · Yours forever</span></div>
+    </div>
+  </section>
+
+  <!-- ─────────────  WHAT'S INSIDE  ───────────── -->
+  <section class="wrap" id="whats-inside">
+    <p class="section-eyebrow">What's inside</p>
+    <h2 class="section-title">A working <em>dossier</em>, not a spreadsheet.</h2>
+    <p class="section-lede">
+      Every grammar school's registration window, test date, results day and key links — laid out the way a parent actually needs to read them. Built for the long admissions year, not a five-minute scroll.
+    </p>
+
+    <div class="features-grid">
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="17" rx="1.5"/><path d="M3 9h18M8 4v17"/></svg>
+        <h3>The complete <em>dataset</em></h3>
+        <p>Every grammar school across Kent, Medway, Bexley, Bucks, Birmingham, Trafford, Sutton, Essex, Slough, Reading, Wirral, Yorkshire, Warwickshire, Lincs &amp; Wiltshire.</p>
+        <ul class="feature-list">
+          <li>Registration open / close</li>
+          <li>Test &amp; results dates</li>
+          <li>Open days, fees, official links</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Track <em>your family's</em> progress</h3>
+        <p>Mark each school as Shortlisted, Registered, Tested, Offered or Declined. Add private notes against any row. Everything stays on your device.</p>
+        <ul class="feature-list">
+          <li>Six status states per school</li>
+          <li>Notes saved automatically</li>
+          <li>No account, no cloud</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <h3>Three views, <em>one truth</em></h3>
+        <p>Switch between a tight comparison table, region-grouped cards, or a season-long timeline that lays the whole admissions year on a single axis.</p>
+        <ul class="feature-list">
+          <li>Filter by region, type, status</li>
+          <li>Search any school in milliseconds</li>
+          <li>Print-friendly for the fridge door</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+        <h3>Calendar <em>export</em></h3>
+        <p>One click drops a school's deadlines straight into Apple Calendar, Google Calendar or Outlook as a standard .ics file. Set reminders the way you already do.</p>
+        <ul class="feature-list">
+          <li>Per-school .ics download</li>
+          <li>Reg deadline · test · results</li>
+          <li>Works on phone &amp; desktop</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v16h16M4 14l5-5 4 4 7-7"/></svg>
+        <h3>Catchments &amp; <em>consortia</em>, decoded</h3>
+        <p>A separate reference for the test bodies behind each region — Kent Test, Bucks STT, KEVI Consortium, CSSE, Sutton Selective and the rest. Knowing which test feeds which school saves you a week.</p>
+        <ul class="feature-list">
+          <li>15 consortia at a glance</li>
+          <li>Test body &amp; offer day</li>
+          <li>Schools-per-consortium count</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l9 4-9 4-9-4 9-4z M3 12l9 4 9-4 M3 17l9 4 9-4"/></svg>
+        <h3>Yours, <em>forever</em></h3>
+        <p>One HTML file. No account to keep, no login to remember, no subscription. Open it on a plane, on a phone, in five years' time. It just works.</p>
+        <ul class="feature-list">
+          <li>~2 MB · works offline</li>
+          <li>Mac, Windows, iOS, Android</li>
+          <li>Free updates this cycle</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────  THREE VIEWS DEMO  ───────────── -->
+  <section class="wrap" style="border-top: none; padding-top: 0;">
+    <p class="section-eyebrow">Three ways to look at the year</p>
+    <h2 class="section-title">The same data, the way <em>your brain</em> needs it that morning.</h2>
+
+    <div class="views-demo">
+      <!-- TABLE -->
+      <div class="view-tile">
+        <div class="view-tile-head">
+          <h4 class="view-tile-h">Table</h4>
+          <span class="view-tile-tag">Compare</span>
+        </div>
+        <div class="art-table">
+          <div class="row"><span class="label">Judd</span><span class="meta soon">30 Jun</span><span class="pill" style="background: var(--terracotta-soft); color: var(--terracotta);">Reg.</span></div>
+          <div class="row"><span class="label">Tonbridge Grammar</span><span class="meta soon">30 Jun</span><span class="pill" style="background: var(--forest-soft); color: var(--forest);">Test'd</span></div>
+          <div class="row"><span class="label">Wilson's</span><span class="meta">4 Jul</span><span class="pill" style="background: var(--bg); color: var(--ink-50); border: 1px solid var(--hairline);">—</span></div>
+          <div class="row"><span class="label">Cranbrook</span><span class="meta">15 Jul</span><span class="pill" style="background: color-mix(in oklab, var(--plum) 12%, transparent); color: var(--plum);">Offer</span></div>
+          <div class="row"><span class="label">Reading School</span><span class="meta">30 Jun</span><span class="pill" style="background: var(--terracotta-soft); color: var(--terracotta);">Reg.</span></div>
+        </div>
+        <p class="view-tile-desc">Sort, filter and scan. The cleanest way to compare deadlines across regions on a single screen.</p>
+      </div>
+
+      <!-- CARDS -->
+      <div class="view-tile">
+        <div class="view-tile-head">
+          <h4 class="view-tile-h">Cards</h4>
+          <span class="view-tile-tag">Browse</span>
+        </div>
+        <div class="art-cards">
+          <div class="card f"><span class="name">The Judd School</span><span class="sub">Tonbridge</span><span class="urg now">Closes 30 Jun</span></div>
+          <div class="card b"><span class="name">Reading School</span><span class="sub">Reading</span><span class="urg ok">Test 19 Sep</span></div>
+          <div class="card c"><span class="name">Cranbrook</span><span class="sub">Cranbrook</span><span class="urg ok">Open 15 Jul</span></div>
+          <div class="card f"><span class="name">Wilson's</span><span class="sub">Wallington</span><span class="urg ok">Closes 4 Jul</span></div>
+        </div>
+        <p class="view-tile-desc">Grouped by region, with urgency badges. Made for the morning glance, when you need shape, not numbers.</p>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="view-tile">
+        <div class="view-tile-head">
+          <h4 class="view-tile-h">Timeline</h4>
+          <span class="view-tile-tag">Plan</span>
+        </div>
+        <div class="art-tl">
+          <div class="axis"><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Mar</span></div>
+          <div class="lane">
+            <span class="lane-label">Judd</span>
+            <div class="track">
+              <div class="band" style="left: 5%; width: 25%;"></div>
+              <div class="pin t" style="left: 38%;"></div>
+              <div class="pin r" style="left: 56%;"></div>
+              <div class="now" style="left: 8%;"></div>
+            </div>
+          </div>
+          <div class="lane">
+            <span class="lane-label">Wilson's</span>
+            <div class="track">
+              <div class="band" style="left: 8%; width: 30%;"></div>
+              <div class="pin t" style="left: 44%;"></div>
+              <div class="pin r" style="left: 60%;"></div>
+              <div class="now" style="left: 8%;"></div>
+            </div>
+          </div>
+          <div class="lane">
+            <span class="lane-label">Reading</span>
+            <div class="track">
+              <div class="band" style="left: 6%; width: 28%;"></div>
+              <div class="pin t" style="left: 42%;"></div>
+              <div class="pin r" style="left: 58%;"></div>
+              <div class="now" style="left: 8%;"></div>
+            </div>
+          </div>
+          <div class="lane">
+            <span class="lane-label">KEVI</span>
+            <div class="track">
+              <div class="band" style="left: 5%; width: 26%;"></div>
+              <div class="pin t" style="left: 40%;"></div>
+              <div class="pin r" style="left: 60%;"></div>
+              <div class="now" style="left: 8%;"></div>
+            </div>
+          </div>
+        </div>
+        <p class="view-tile-desc">Every school's window, test and results day on one shared axis. The whole year in a single picture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────  PRICING  ───────────── -->
+  <section class="wrap" id="pricing">
+    <p class="section-eyebrow">Buy it</p>
+    <h2 class="section-title">One file. <em>One price.</em></h2>
+    <p class="section-lede">No subscription, no login, no upsell. Pay once, download immediately, keep it for the rest of the admissions year.</p>
+
+    <div class="pricing" style="margin-top: 36px;">
+      <div class="pricing-left">
+        <h3 class="pricing-h">The Tracker — <em>2027 Entry</em></h3>
+        <p class="pricing-sub">Everything in the document, ready to use.</p>
+        <ul class="pricing-list">
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>All 80 grammar schools, every key date</span></li>
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>Table, cards &amp; timeline views — print-ready</span></li>
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>Status &amp; private notes per school</span></li>
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>One-click .ics export to your calendar</span></li>
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>Free data refresh emails through March 2027</span></li>
+          <li><svg class="tk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg><span>Family copy — share between two devices</span></li>
+        </ul>
+      </div>
+      <div class="pricing-right">
+        <div class="price-tag">
+          <span class="price-currency">£</span>
+          <span class="price-num">14</span>
+        </div>
+        <p class="price-once"><b>One-off</b> · No subscription · Yours forever</p>
+        <button class="buy-cta" data-buy>
+          <span>Buy &amp; download now</span>
+          <span class="arrow">→</span>
+        </button>
+        <div class="price-trust">
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>Secure checkout</span>
+          <span>Card · Apple Pay · Google Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sample-callout">
+      <div class="sample-callout-text">
+        <p class="sample-callout-h">Not sure yet? Try a free preview.</p>
+        <p class="sample-callout-p">A redacted copy with eight Kent schools — the full UI, real data, no commitment. Use the token below at the door.</p>
+        <div class="token-block">
+          <span class="token-label">Preview token</span>
+          <code class="token-code" id="preview-token">TRUUW-PREVIEW-7K2N4</code>
+          <button class="token-copy" type="button" id="token-copy-btn" aria-label="Copy preview token">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+            <span id="token-copy-label">Copy</span>
+          </button>
+          <span class="token-expiry">Valid 48 hours · One household</span>
+        </div>
+      </div>
+      <a class="btn-ghost" href="preview.html?token=TRUUW-PREVIEW-7K2N4" target="_blank" rel="noopener">Open free preview →</a>
+    </div>
+  </section>
+
+  <!-- ─────────────  AUTHOR / QUOTE  ───────────── -->
+  <section class="wrap">
+    <div class="author">
+      <div>
+        <p class="section-eyebrow">Why this exists</p>
+        <h2 class="section-title" style="font-size: clamp(26px, 2.8vw, 36px);">Built by parents who lost a Saturday to forty browser tabs.</h2>
+      </div>
+      <div>
+        <p class="author-quote">
+          The information is all out there — on fifteen different council sites, in PDFs from 2019, on individual school pages with a different layout each. We built the document we wished we'd had two years ago.
+        </p>
+        <p class="author-byline"><b>Eve &amp; James</b> &nbsp;·&nbsp; PARENTS, NEWHAM &nbsp;·&nbsp; FIRST EDITION 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────  FAQ  ───────────── -->
+  <section class="wrap" id="faq">
+    <p class="section-eyebrow">Questions</p>
+    <h2 class="section-title">Before you buy.</h2>
+
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>What exactly do I get for £14?<span class="tog"></span></summary>
+        <div class="faq-body">
+          <p>A single HTML file (around 2 MB) that opens in any modern browser. Inside is the full TRU 11+ Tracker — every grammar school, every key date, the table/cards/timeline views, status tracking and calendar export. Everything works offline; nothing phones home.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Is the data accurate?<span class="tog"></span></summary>
+        <div class="faq-body">
+          <p>Every date is sourced directly from each school's admissions page or its consortium body, and verified twice in the month before publication. We monitor changes through the admissions cycle and email a refreshed file to every buyer if anything material moves. <em>Always confirm critical deadlines on the school's own site before submitting.</em></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>How is "yours forever" different from a website?<span class="tog"></span></summary>
+        <div class="faq-body">
+          <p>It's an actual file on your computer. You can open it on a flight, in a hotel with bad Wi-Fi, on a Kindle Fire, in five years. Your status and notes are saved in your browser's local storage, so the document remembers you between sessions. There's no account, no server, nothing to expire.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Why not just use the council websites?<span class="tog"></span></summary>
+        <div class="faq-body">
+          <p>You can. The tracker exists because most parents apply to schools across two or three regions, each with a different consortium, test provider, registration window and offer process. Holding all that in fifteen browser tabs is the problem we wanted to fix.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ─────────────  FINAL CTA  ───────────── -->
+  <section class="wrap" style="text-align: center; padding: 96px 0;">
+    <h2 class="section-title" style="margin: 0 auto 28px; max-width: none;">Stop juggling tabs. <em>Start tracking.</em></h2>
+    <button class="btn-primary" data-buy style="margin: 0 auto;">
+      <span>Buy &amp; download — instant</span>
+      <span class="price">£14</span>
+      <span class="arrow">→</span>
+    </button>
+    <p style="margin-top: 18px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-50); letter-spacing: 0.06em;">
+      INSTANT DOWNLOAD &nbsp;·&nbsp; SECURE CHECKOUT &nbsp;·&nbsp; YOURS FOREVER
+    </p>
+  </section>
+
+  <!-- ─────────────  FOOTER  ───────────── -->
+  <footer class="wrap foot">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-brand-text">TRUUW</span>
+        <p style="margin-top: 14px;">Quietly-made admissions tools<br/>for parents going through it.</p>
+      </div>
+      <div>
+        <p class="foot-h">Document</p>
+        <p><a href="#faq">FAQ</a></p>
+      </div>
+      <div>
+        <p class="foot-h">Contact</p>
+        <p><a href="/cdn-cgi/l/email-protection#a7cfc2cbcbc8e7d3d5d2d2d089c4c8"><span class="__cf_email__" data-cfemail="abc3cec7c7c4ebdfd9dededc85c8c4">[email&#160;protected]</span></a></p>
+        <p>Reply within 24 hours, weekdays.</p>
+      </div>
+    </div>
+    <div class="foot-line">
+      <span>© 2026 TutorsAreUs Ltd.</span>
+      <span>England · Co. №14728110</span>
+      <span style="margin-left: auto;"><a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Privacy</a></span>
+    </div>
+  </footer>
+
+  <!-- ─────────────  CHECKOUT MODAL  ───────────── -->
+  <div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" id="modal">
+      <!-- form state -->
+      <div id="modal-form-state">
+        <div class="modal-head">
+          <h3 class="modal-h">Checkout · <em>£14</em></h3>
+          <button class="modal-close" aria-label="Close" data-close>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-summary">
+            <div class="modal-summary-l">
+              <span class="modal-summary-h">TRUUW 11+ Tracker</span>
+              <span class="modal-summary-s">2027 ENTRY · ONE-OFF</span>
+            </div>
+            <span class="modal-summary-r">£14.00</span>
+          </div>
+
+          <form id="checkout-form" autocomplete="on">
+            <div class="form-row">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" required placeholder="parent@home.co.uk" autocomplete="email" />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="name">Name on card</label>
+              <input class="form-input" type="text" id="name" name="name" required placeholder="H. Reid" autocomplete="cc-name" />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="card">Card number</label>
+              <input class="form-input mono" type="text" id="card" name="card" required placeholder="4242 4242 4242 4242" autocomplete="cc-number" inputmode="numeric" />
+            </div>
+            <div class="form-row split">
+              <div>
+                <label class="form-label" for="exp">Expiry</label>
+                <input class="form-input mono" type="text" id="exp" name="exp" required placeholder="MM / YY" autocomplete="cc-exp" inputmode="numeric" />
+              </div>
+              <div>
+                <label class="form-label" for="cvc">CVC</label>
+                <input class="form-input mono" type="text" id="cvc" name="cvc" required placeholder="123" autocomplete="cc-csc" inputmode="numeric" />
+              </div>
+            </div>
+
+            <button class="pay-btn" type="submit" id="pay-btn">
+              <span id="pay-btn-label">Pay £14.00</span>
+            </button>
+            <div class="pay-trust">
+              <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>SSL encrypted</span>
+              <span>Powered by TRUUW Pay</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- success state -->
+      <div id="modal-success-state" style="display: none;">
+        <div class="success">
+          <div class="success-mark">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="4 12 10 18 20 6"/></svg>
+          </div>
+          <h3 class="success-h">Payment received. <em>Your tracker is ready.</em></h3>
+          <p class="success-p">A copy of the receipt is on its way to <span id="success-email">your email</span>.</p>
+          <div class="success-receipt">
+            ORDER &nbsp; <b id="success-order">TRU-2026-XXXXX</b><br/>
+            ITEM &nbsp;&nbsp;&nbsp; TRUUW 11+ Tracker — 2027 Entry<br/>
+            TOTAL &nbsp;&nbsp; <b>£14.00</b><br/>
+            DATE &nbsp;&nbsp;&nbsp;<span id="success-date"></span>
+          </div>
+          <a class="success-download" href="#" id="download-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg>
+            <span>Download the tracker (HTML, ~2 MB)</span>
+          </a>
+          <p class="success-foot">Trouble downloading? Write to us at <a href="/cdn-cgi/l/email-protection#4c24292020230c383e39393b622f23"><span class="__cf_email__" data-cfemail="9cf4f9f0f0f3dce8eee9e9ebb2fff3">[email&#160;protected]</span></a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
