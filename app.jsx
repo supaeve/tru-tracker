@@ -16,6 +16,7 @@ const fmtShort = (iso) => {
 };
 const fmtDay = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { weekday: "short" });
 const today = () => new Date().toISOString().slice(0, 10);
+const showDate = (iso, text) => text || (iso ? fmtDate(iso) : "—");
 const daysBetween = (a, b) =>
   Math.round((new Date(b + "T00:00:00") - new Date(a + "T00:00:00")) / 86400000);
 
@@ -139,7 +140,7 @@ function Cover({ data }) {
       <div className="cover-paper">
         <header className="cover-head">
           <div className="brand">
-            <img className="brand-logo" src="assets/truuw-logo.png" alt="TRUUW" style={{height: 44, width: "auto", display: "block"}} />
+            <img className="brand-logo" src={window.TRUUW_LOGO || "assets/truuw-logo.png"} alt="TRUUW" style={{height: 44, width: "auto", display: "block"}} />
             <span className="brand-tag" style={{paddingLeft: 14, borderLeft: "1px solid var(--hairline)", marginLeft: 4}}>A clearer 11+ year</span>
           </div>
           <div className="edition-stamp">
@@ -156,8 +157,8 @@ function Cover({ data }) {
             in one place.
           </h1>
           <p className="cover-lede">
-            Every state grammar in England with selective entry at age&nbsp;11 — sorted by region,
-            cross-checked against test boards, and built so you can plan, register, and
+            76 selective schools across London and the South East — sorted by area,
+            with dates correct as at September 2026, and built so you can plan, register, and
             track every deadline from one quiet document on your laptop.
           </p>
         </div>
@@ -173,10 +174,10 @@ function Cover({ data }) {
           </div>
           <div className="meta-block">
             <span className="meta-label">National Offer Day</span>
-            <span className="meta-num small">2 Mar 2027</span>
+            <span className="meta-num small">1 Mar 2027</span>
           </div>
           <div className="meta-block">
-            <span className="meta-label">Last updated</span>
+            <span className="meta-label">Dates correct as at</span>
             <span className="meta-num small">{data.generatedAt}</span>
           </div>
         </div>
@@ -192,7 +193,7 @@ function Cover({ data }) {
             <div><dt>Method</dt><dd>{r.method}</dd></div>
             <div><dt>Total</dt><dd className="total">{r.fee}</dd></div>
           </dl>
-          <p className="receipt-foot">Single-family licence. Updates free until 1 Mar 2027.</p>
+          <p className="receipt-foot">Single-family licence. Dates correct as at {data.datesAsAt || data.generatedAt} — always confirm on the school's site.</p>
         </div>
 
         <p className="cover-note">
@@ -294,9 +295,9 @@ function TableView({ schools, statusMap, notesMap, onStatus, onNotes, expanded, 
                   </td>
                   <td><span className="region-tag">{s.region}</span></td>
                   <td><span className="type-tag" data-t={s.type}>{s.type}</span></td>
-                  <td className="num"><DateCell iso={s.regCloses} flag /></td>
-                  <td className="num"><DateCell iso={s.testDate} /></td>
-                  <td className="num"><DateCell iso={s.resultsDate} /></td>
+                  <td className="num"><DateCell iso={s.regCloses} text={s.regClosesText} flag /></td>
+                  <td className="num"><DateCell iso={s.testDate} text={s.testDateText} /></td>
+                  <td className="num"><DateCell iso={s.resultsDate} text={s.resultsDateText} /></td>
                   <td className="num">{s.fee}</td>
                   <td className="col-act">
                     <button className="row-toggle" onClick={() => setExpanded(isOpen ? null : s.id)} aria-label="More">
@@ -322,8 +323,8 @@ function TableView({ schools, statusMap, notesMap, onStatus, onNotes, expanded, 
   );
 }
 
-function DateCell({ iso, flag }) {
-  if (!iso) return <span className="date-empty">—</span>;
+function DateCell({ iso, flag, text }) {
+  if (!iso) return <span className="date-empty" title={text || ""}>{text ? (text.length > 22 ? text.slice(0, 20) + "…" : text) : "—"}</span>;
   const d = daysBetween(today(), iso);
   const past = d < 0;
   const soon = !past && d <= 21;
@@ -342,8 +343,8 @@ function ExpandPanel({ s, notes, onNotes }) {
         <div>
           <h4 className="exp-h">About</h4>
           <p className="exp-p">{s.notes}</p>
-          {s.openDays && s.openDays.length > 0 && (
-            <p className="exp-p"><strong>Open days:</strong> {s.openDays.map(fmtDate).join(" · ")}</p>
+          {(s.openDaysText || (s.openDays && s.openDays.length > 0)) && (
+            <p className="exp-p"><strong>Open days:</strong> {s.openDaysText || s.openDays.map(fmtDate).join(" · ")}</p>
           )}
           <div className="exp-links">
             {s.url && <a className="exp-link" href={s.url} target="_blank" rel="noreferrer">School website ↗</a>}
@@ -357,11 +358,11 @@ function ExpandPanel({ s, notes, onNotes }) {
         <div>
           <h4 className="exp-h">Key dates</h4>
           <ul className="exp-dates">
-            <li><span>Registration opens</span><span>{fmtDate(s.regOpens)}</span></li>
-            <li><span>Registration closes</span><span>{fmtDate(s.regCloses)}</span></li>
-            <li><span>Test</span><span>{fmtDate(s.testDate)}</span></li>
-            <li><span>Results</span><span>{fmtDate(s.resultsDate)}</span></li>
-            <li><span>National Offer Day</span><span>2 Mar 2027</span></li>
+            <li><span>Registration opens</span><span>{showDate(s.regOpens, s.regOpensText)}</span></li>
+            <li><span>Registration closes</span><span>{showDate(s.regCloses, s.regClosesText)}</span></li>
+            <li><span>Test</span><span>{showDate(s.testDate, s.testDateText)}</span></li>
+            <li><span>Results</span><span>{showDate(s.resultsDate, s.resultsDateText)}</span></li>
+            <li><span>National Offer Day</span><span>1 Mar 2027</span></li>
           </ul>
         </div>
       </div>
@@ -419,9 +420,9 @@ function SchoolCard({ s, status, notes, onStatus, onNotes }) {
         <StatusPill schoolId={s.id} status={status} onChange={onStatus} />
       </header>
       <ul className="card-dates">
-        <li><span>Reg. closes</span><span className="mono">{fmtShort(s.regCloses)}</span></li>
-        <li><span>Test</span><span className="mono">{fmtShort(s.testDate)}</span></li>
-        <li><span>Results</span><span className="mono">{fmtShort(s.resultsDate)}</span></li>
+        <li><span>Reg. closes</span><span className="mono">{s.regCloses ? fmtShort(s.regCloses) : (s.regClosesText || "—")}</span></li>
+        <li><span>Test</span><span className="mono">{s.testDate ? fmtShort(s.testDate) : (s.testDateText || "—")}</span></li>
+        <li><span>Results</span><span className="mono">{s.resultsDate ? fmtShort(s.resultsDate) : (s.resultsDateText || "—")}</span></li>
       </ul>
       {urgency && <div className={"urgency tone-" + urgency.tone}>{urgency.label}</div>}
       <p className="card-notes-h">Notes</p>
@@ -514,7 +515,7 @@ function TimelineView({ schools, statusMap, onStatus }) {
                     <span>{s.name}</span>
                   </div>
                   <div className="tl-track">
-                    <div className="tl-band" style={{ left: `${regL}%`, width: `${Math.max(0.5, regR - regL)}%` }} />
+                    {s.regOpens && s.regCloses && <div className="tl-band" style={{ left: `${regL}%`, width: `${Math.max(0.5, regR - regL)}%` }} />}
                     {s.testDate && <div className="tl-pin tl-test" style={{ left: `${pct(s.testDate)}%` }} title={`Test ${fmtDate(s.testDate)}`}><span>T</span></div>}
                     {s.resultsDate && <div className="tl-pin tl-res" style={{ left: `${pct(s.resultsDate)}%` }} title={`Results ${fmtDate(s.resultsDate)}`}><span>R</span></div>}
                     {todayPct !== null && <div className="tl-today" style={{ left: `${todayPct}%` }} />}
@@ -720,7 +721,7 @@ function App() {
       <footer className="page-foot">
         <div className="foot-grid">
           <div>
-            <img src="assets/truuw-logo.png" alt="TRUUW" style={{height: 38, width: "auto", display: "block"}} />
+            <img src={window.TRUUW_LOGO || "assets/truuw-logo.png"} alt="TRUUW" style={{height: 38, width: "auto", display: "block"}} />
             <p className="foot-tag" style={{marginTop: 8}}>A clearer 11+ year</p>
           </div>
           <div>

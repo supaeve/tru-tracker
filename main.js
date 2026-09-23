@@ -18,7 +18,7 @@ if (tokenCopyBtn) {
 // ── Checkout modal ───────────────────────────────────────────
 // Set to a real Stripe Payment Link URL to enable live payments.
 // Leave as "" to keep the mock checkout active.
-const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/test_14A6oH8tVad10ux3NjejK04";
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/cNi14oaI8a8IaXa3qX1VK05";
 
 (function () {
   const bg          = document.getElementById('modal-bg');
