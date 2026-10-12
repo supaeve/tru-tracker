@@ -46,7 +46,7 @@ const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/cNi14oaI8a8IaXa3qX1VK05";
   };
 
   document.querySelectorAll('[data-buy]').forEach(b =>
-    b.addEventListener('click', (e) => { e.preventDefault(); open(); })
+    b.addEventListener('click', (e) => { e.preventDefault(); if (STRIPE_PAYMENT_LINK) { window.location.href = STRIPE_PAYMENT_LINK; return; } open(); })
   );
   document.querySelectorAll('[data-close]').forEach(b =>
     b.addEventListener('click', close)

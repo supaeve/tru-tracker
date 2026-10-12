@@ -68,4 +68,4 @@ The data is fixed at the time of download. The file never fetches anything onlin
 
 ## Contact
 
-TutorsAreUs Ltd. · hello@truuw.co
+TutorsAreUs Ltd. · info@tutorsareus.co.uk
