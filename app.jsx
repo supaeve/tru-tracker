@@ -730,7 +730,7 @@ function App() {
           </div>
           <div>
             <p className="foot-h">Disclaimer</p>
-            <p>Dates and details verified at the edition stamp on the cover. Always cross-check on the school&rsquo;s website before relying on a deadline. Errors? <a href="mailto:hello@tru.example">hello@tru.example</a>.</p>
+            <p>Dates and details verified at the edition stamp on the cover. Always cross-check on the school&rsquo;s website before relying on a deadline. Errors? <a href="mailto:info@tutorsareus.co.uk">info@tutorsareus.co.uk</a>.</p>
           </div>
         </div>
         <div className="foot-line">
